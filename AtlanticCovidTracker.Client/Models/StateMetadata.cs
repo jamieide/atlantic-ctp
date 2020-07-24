@@ -1,4 +1,4 @@
-﻿namespace AtlanticCovidTracker.Client
+﻿namespace AtlanticCovidTracker.Client.Models
 {
     public class StateMetadata
     {

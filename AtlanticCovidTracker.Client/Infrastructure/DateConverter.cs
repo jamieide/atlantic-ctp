@@ -3,12 +3,12 @@ using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace AtlanticCovidTracker.Client
+namespace AtlanticCovidTracker.Client.Infrastructure
 {
     /// <summary>
     /// JsonConverter to convert Atlantic client date format (e.g. 20200722).
     /// </summary>
-    internal class DateConverter: JsonConverter<DateTime>
+    internal class DateConverter : JsonConverter<DateTime>
     {
         public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
@@ -18,9 +18,7 @@ namespace AtlanticCovidTracker.Client
 
         public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options)
         {
-            var dateString = value.ToString("yyyyMMdd");
-            var dateInt = int.Parse(dateString);
-            writer.WriteNumberValue(dateInt);
+            throw new NotImplementedException();
         }
     }
 }

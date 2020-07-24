@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AtlanticCovidTracker.Client.Infrastructure;
+using System;
+using System.Text.Json.Serialization;
 
-namespace AtlanticCovidTracker.Client
+namespace AtlanticCovidTracker.Client.Models
 {
     public class UnitedStatesData
     {
+        [JsonConverter(typeof(DateConverter))]
         public DateTime Date { get; set; }
         public int? Death { get; set; }
         public int? DeathIncrease { get; set; }

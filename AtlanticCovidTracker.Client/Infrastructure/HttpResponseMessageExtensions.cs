@@ -4,20 +4,14 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace AtlanticCovidTracker.Client
+namespace AtlanticCovidTracker.Client.Infrastructure
 {
     internal static class HttpResponseMessageExtensions
     {
-        private static JsonSerializerOptions _jsonSerializerOptions;
-
-        static HttpResponseMessageExtensions()
+        private static readonly JsonSerializerOptions _jsonSerializerOptions = new JsonSerializerOptions
         {
-            _jsonSerializerOptions = new JsonSerializerOptions
-            {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-            };
-            _jsonSerializerOptions.Converters.Add(new DateConverter());
-        }
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        };
 
         public static void CheckHttpResponse(this HttpResponseMessage response, ILogger logger)
         {
