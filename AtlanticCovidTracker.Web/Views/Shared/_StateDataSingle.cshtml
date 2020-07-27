@@ -1,0 +1,97 @@
+﻿@model StateData
+@using AtlanticCovidTracker.Web.Infrastructure;
+
+<table class="table table-sm table-striped">
+    <tr>
+        <th>Data Quality Grade</th>
+        <td class="text-right">@Model.DataQualityGrade</td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td class="text-right">@Model.Date.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <th>Death</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.Death)</td>
+    </tr>
+    <tr>
+        <th>Death Confirmed</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.DeathConfirmed)</td>
+    </tr>
+    <tr>
+        <th>Death Increase</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.DeathIncrease)</td>
+    </tr>
+    <tr>
+        <th>Death Probably</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.DeathProbable)</td>
+    </tr>
+    <tr>
+        <th>Hospitalized Cumulative</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.HospitalizedCumulative)</td>
+    </tr>
+    <tr>
+        <th>Hospitalized Increase</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.HospitalizedIncrease)</td>
+    </tr>
+    <tr>
+        <th>In ICU Cumulative</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.InIcuCumulative)</td>
+    </tr>
+    <tr>
+        <th>In ICU Currently</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.InIcuCurrently)</td>
+    </tr>
+    <tr>
+        <th>Negative</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.Negative)</td>
+    </tr>
+    <tr>
+        <th>Negative Increase</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.NegativeIncrease)</td>
+    </tr>
+    <tr>
+        <th>Negative Tests Viral</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.NegativeTestsViral)</td>
+    </tr>
+    <tr>
+        <th>On Ventilator Cumulative</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.OnVentilatorCumulative)</td>
+    </tr>
+    <tr>
+        <th>On Ventilator Currently</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.OnVentilatorCurrently)</td>
+    </tr>
+    <tr>
+        <th>Pending</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.Pending)</td>
+    </tr>
+    <tr>
+        <th>Positive Cases Viral</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.PositiveCasesViral)</td>
+    </tr>
+    <tr>
+        <th>Positive Increase</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.PostiveIncrease)</td>
+    </tr>
+    <tr>
+        <th>Positive Tests Viral</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.PositiveTestsViral)</td>
+    </tr>
+    <tr>
+        <th>Recovered</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.Recovered)</td>
+    </tr>
+    <tr>
+        <th>Total Test Results</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.TotalTestResults)</td>
+    </tr>
+    <tr>
+        <th>Total Test Results Increase</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.TotalTestResultsIncrease)</td>
+    </tr>
+    <tr>
+        <th>Total Tests Viral</th>
+        <td class="text-right">@Utilities.FormatNullableInt(Model.TotalTestsViral)</td>
+    </tr>
+</table>

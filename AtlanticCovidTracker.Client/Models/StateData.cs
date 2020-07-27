@@ -28,7 +28,7 @@ namespace AtlanticCovidTracker.Client.Models
         [JsonConverter(typeof(NullableDateTimeConverter))]
         public DateTime? LastUpdateEt { get; set; }
         public int? Negative { get; set; }
-        public int? NegativeIncreate { get; set; }
+        public int? NegativeIncrease { get; set; }
         public int? NegativeTestsViral { get; set; }
         public int? OnVentilatorCumulative { get; set; }
         public int? OnVentilatorCurrently { get; set; }

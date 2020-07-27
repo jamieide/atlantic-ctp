@@ -1,0 +1,23 @@
+﻿@model IEnumerable<StateData>
+
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Date</th>
+            <th>Data Quality Grade</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="States" asp-action="CurrentForState" asp-route-id="@item.State">@item.State</a>
+                </td>
+                <td>@item.Date.ToShortDateString()</td>
+                <td>@item.DataQualityGrade</td>
+            </tr>
+        }
+    </tbody>
+</table>
