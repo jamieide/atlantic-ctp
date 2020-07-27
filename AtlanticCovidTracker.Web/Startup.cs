@@ -1,11 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AtlanticCovidTracker.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -20,7 +16,14 @@ namespace AtlanticCovidTracker.Web
                 config.BaseAddress = new Uri("https://covidtracking.com/");
             });
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddRazorRuntimeCompilation();
+            
+            services.AddHttpClient<IAtlanticCovidTrackerClient, AtlanticCovidTrackerClient>(config =>
+            {
+                // TODO move to appsettings
+                config.BaseAddress = new Uri("https://covidtracking.com/");
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

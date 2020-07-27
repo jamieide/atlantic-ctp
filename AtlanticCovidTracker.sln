@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtlanticCovidTracker.Client", "AtlanticCovidTracker.Client\AtlanticCovidTracker.Client.csproj", "{70CCC43B-EB8C-44B8-83EB-F9B3A1656F9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtlanticCovidTracker.Client", "AtlanticCovidTracker.Client\AtlanticCovidTracker.Client.csproj", "{70CCC43B-EB8C-44B8-83EB-F9B3A1656F9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtlanticCovidTracker.Client.Tests", "AtlanticCovidTracker.Client.Tests\AtlanticCovidTracker.Client.Tests.csproj", "{243A43ED-EFA7-47D9-AD3E-8C6A49AE3DDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtlanticCovidTracker.Client.Tests", "AtlanticCovidTracker.Client.Tests\AtlanticCovidTracker.Client.Tests.csproj", "{243A43ED-EFA7-47D9-AD3E-8C6A49AE3DDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtlanticCovidTracker.Web", "AtlanticCovidTracker.Web\AtlanticCovidTracker.Web.csproj", "{1F1A6DAF-79C6-4126-90F7-00490571709D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtlanticCovidTracker.Web", "AtlanticCovidTracker.Web\AtlanticCovidTracker.Web.csproj", "{1F1A6DAF-79C6-4126-90F7-00490571709D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

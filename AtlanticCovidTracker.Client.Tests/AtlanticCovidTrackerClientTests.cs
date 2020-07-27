@@ -71,10 +71,6 @@ namespace AtlanticCovidTracker.Client.Tests
             Assert.IsNotNull(target);
             Assert.IsTrue(target.Any());
             var missingDate = target.Where(x => x.LastUpdateEt == DateTime.MinValue).ToList();
-            if (missingDate.Any())
-            {
-                var x = 1;
-            }
         }
 
         [TestMethod]
