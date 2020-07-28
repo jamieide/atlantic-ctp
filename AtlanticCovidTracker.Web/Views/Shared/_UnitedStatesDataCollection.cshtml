@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<UnitedStatesData>
-@using AtlanticCovidTracker.Web.Infrastructure;
 
 <table class="table table-sm table-striped">
     <thead>
@@ -24,26 +23,26 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var usData in Model)
         {
             <tr>
-                <td class="text-right">@item.Date.ToShortDateString()</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.Death)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.DeathIncrease)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.HospitalizedCumulative)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.HospitalizedCurrently)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.InIcuCumulative)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.InIcuCurrently)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.Negative)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.NegativeIncrease)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.OnVentilatorCumulative)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.OnVentilatorCurrently)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.Pending)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.Positive)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.PositiveIncrease)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.Recovered)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.TotalTestResults)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(item.TotalTestResultsIncrease)</td>
+                <td class="text-right">@usData.Date.ToShortDateString()</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.Death)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.DeathIncrease)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.HospitalizedCumulative)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.HospitalizedCurrently)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.InIcuCumulative)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.InIcuCurrently)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.Negative)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.NegativeIncrease)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.OnVentilatorCumulative)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.OnVentilatorCurrently)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.Pending)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.Positive)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.PositiveIncrease)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.Recovered)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.TotalTestResults)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(usData.TotalTestResultsIncrease)</td>
             </tr>
         }
     </tbody>

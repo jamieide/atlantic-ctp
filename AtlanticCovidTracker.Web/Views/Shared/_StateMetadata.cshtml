@@ -1,3 +1,47 @@
 ﻿@model StateMetadata
 
-<p>StateMetadata works!</p>
+<div class="row">
+    <div class="col-md-4">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="@Model.Covid19Site" target="_blank">Primary COVID-19 site</a>
+            </li>
+            @if (!string.IsNullOrEmpty(Model.Covid19SiteOld))
+            {
+                <li class="list-group-item">
+                    <a href="@Model.Covid19SiteOld" target="_blank">Old COVID-19 site</a>
+                </li>
+            }
+            @if (!string.IsNullOrEmpty(Model.Covid19SiteSecondary))
+            {
+                <li class="list-group-item">
+                    <a href="@Model.Covid19SiteOld" target="_blank">Secondary COVID-19 site</a>
+                </li>
+            }
+            @if (!string.IsNullOrEmpty(Model.Covid19SiteTertiary))
+            {
+                <li class="list-group-item">
+                    <a href="@Model.Covid19SiteOld" target="_blank">Tertiary COVID-19 site</a>
+                </li>
+            }
+            @if (!string.IsNullOrEmpty(Model.Twitter))
+            {
+                <li class="list-group-item">
+                    <a href="@($"https://twitter.com/{Model.Twitter}")" target="_blank">
+                        <img src="~/images/Twitter_Logo_Blue.png" height="30" width="30" />
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                Notes
+            </div>
+            <div class="card-body">
+                <p class="card-text">@Model.Notes</p>
+            </div>
+        </div>
+    </div>
+</div>

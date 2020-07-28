@@ -31,10 +31,26 @@ namespace AtlanticCovidTracker.Web.Features.States
             var stateMetadata = await getStateMetadata;
             var vm = new CurrentForStateViewModel
             {
-                StateData = stateCurrentData,
+                CurrentData = stateCurrentData,
                 StateMetadata = stateMetadata
             };
             
+            return View(vm);
+        }
+
+        public async Task<IActionResult> HistoricForState(string id)
+        {
+            // kind of silly to parallel these
+            var getStateHistoricDataTask = _atlanticCovidTrackerClient.GetStateHistoricData(id);
+            var getStateMetadata = _atlanticCovidTrackerClient.GetStateMetadata(id);
+            var stateHistoricData = await getStateHistoricDataTask;
+            var stateMetadata = await getStateMetadata;
+            var vm = new HistoricForStateViewModel
+            {
+                HistoricData = stateHistoricData,
+                StateMetadata = stateMetadata
+            };
+
             return View(vm);
         }
     }

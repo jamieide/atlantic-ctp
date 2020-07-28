@@ -1,12 +1,15 @@
 ﻿@model AtlanticCovidTracker.Web.Features.States.CurrentForStateViewModel
 @{
-    ViewData["Title"] = $"{Model.StateData.State} Current Data";
+    <a href="C:\Users\jamie\Documents\Visual Studio 2019\Projects\atlantic-ctp\AtlanticCovidTracker.Client.Tests\Factory.cs">C:\Users\jamie\Documents\Visual Studio 2019\Projects\atlantic-ctp\AtlanticCovidTracker.Client.Tests\Factory.cs</a>
+    ViewData["Title"] = $"{Model.StateMetadata.State} Current";
 }
 
-<h1>@Model.StateData.State Current Data</h1>
+<h1>@Utilities.GetStateName(Model.StateMetadata.State) Current</h1>
+
+<partial name="_StateMetadata" for="StateMetadata" />
 
 <div class="row mt-3">
     <div class="col-8 offset-2">
-        <partial name="_StateDataSingle" for="StateData" />
-    </div> 
+        <partial name="_StateDataSingle" for="CurrentData" />
+    </div>
 </div>

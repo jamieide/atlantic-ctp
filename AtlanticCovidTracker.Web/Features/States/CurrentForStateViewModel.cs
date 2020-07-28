@@ -4,7 +4,7 @@ namespace AtlanticCovidTracker.Web.Features.States
 {
     public class CurrentForStateViewModel
     {
-        public StateData StateData { get; set; }
+        public StateData CurrentData { get; set; }
         public StateMetadata StateMetadata { get; set; }
     }
 }

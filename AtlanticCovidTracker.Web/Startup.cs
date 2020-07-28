@@ -22,6 +22,8 @@ namespace AtlanticCovidTracker.Web
                 config.LowercaseUrls = true;
             });
 
+            // TODO understand caching
+            //services.AddResponseCaching();
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation();
 

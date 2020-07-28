@@ -8,6 +8,25 @@
     <link rel="stylesheet" href="~/twitter-bootstrap/css/bootstrap.min.css" />
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+            <span class="text-white">COVID-19 DATA</span>
+        </a>
+        <ul class="navbar-nav mr-auto ml-5">
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="National" asp-action="Current">Current</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="National" asp-action="Historic">Historic</a>
+            </li>
+            <li>
+                <a class="nav-link" asp-controller="States" asp-action="Current">States</a>
+            </li>
+        </ul>
+    </nav>
     <div class="container">
         @RenderBody()
     </div>

@@ -1,12 +1,39 @@
 ﻿@model IEnumerable<StateData>
+@using AtlanticCovidTracker.Web.Infrastructure;
+
 @{
-    ViewData["Title"] = "State Data - Current";
+    ViewData["Title"] = "States Current";
 }
 
-<h1>Current</h1>
+<h1>States Current</h1>
 
 <div class="row">
     <div class="col-8 offset-2">
-        <partial name="_StateDataCollection" />
+        <table class="table table-sm table-striped">
+            <thead>
+                <tr>
+                    <th>State</th>
+                    <th>Date</th>
+                    <th>Data Quality Grade</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var stateData in Model)
+                {
+                    <tr>
+                        <td>
+                            @Utilities.GetStateName(stateData.State)
+                        </td>
+                        <td>@stateData.Date.ToShortDateString()</td>
+                        <td>@stateData.DataQualityGrade</td>
+                        <td>
+                            <a asp-controller="States" asp-action="CurrentForState" asp-route-id="@stateData.State">Current</a>
+                            <a asp-controller="States" asp-action="HistoricForState" asp-route-id="@stateData.State">Historic</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

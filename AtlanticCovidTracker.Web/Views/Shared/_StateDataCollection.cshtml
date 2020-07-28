@@ -3,20 +3,60 @@
 <table class="table table-sm table-striped">
     <thead>
         <tr>
-            <th>State</th>
             <th>Date</th>
             <th>Data Quality Grade</th>
+            <th>Death</th>
+            <th>Death Confirmed</th>
+            <th>Death Increase</th>
+            <th>Death Probably</th>
+            <th>Hospitalized Cumulative</th>
+            <th>Hospitalized Increase</th>
+            <th>In ICU Cumulative</th>
+            <th>In ICU Currently</th>
+            <th>Negative</th>
+            <th>Negative Increase</th>
+            <th>Negative Tests Viral</th>
+            <th>On Ventilator Cumulative</th>
+            <th>On Ventilator Currently</th>
+            <th>Pending</th>
+            <th>Positive Cases Viral</th>
+            <th>Positive Increase</th>
+            <th>Positive Tests Viral</th>
+            <th>Recovered</th>
+            <th>Total Test Results</th>
+            <th>Total Test Results Increase</th>
+            <th>Total Tests Viral</th>
         </tr>
     </thead>
+</table>
+<table class="table table-sm table-striped">
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var stateData in Model)
         {
             <tr>
-                <td>
-                    <a asp-controller="States" asp-action="CurrentForState" asp-route-id="@item.State">@item.State</a>
-                </td>
-                <td>@item.Date.ToShortDateString()</td>
-                <td>@item.DataQualityGrade</td>
+                <td class="text-right">@stateData.Date.ToShortDateString()</td>
+                <td class="text-right">@stateData.DataQualityGrade</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.Death)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.DeathConfirmed)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.DeathIncrease)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.DeathProbable)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.HospitalizedCumulative)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.HospitalizedIncrease)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.InIcuCumulative)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.InIcuCurrently)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.Negative)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.NegativeIncrease)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.NegativeTestsViral)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.OnVentilatorCumulative)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.OnVentilatorCurrently)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.Pending)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.PositiveCasesViral)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.PostiveIncrease)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.PositiveTestsViral)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.Recovered)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.TotalTestResults)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.TotalTestResultsIncrease)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.TotalTestsViral)</td>
             </tr>
         }
     </tbody>

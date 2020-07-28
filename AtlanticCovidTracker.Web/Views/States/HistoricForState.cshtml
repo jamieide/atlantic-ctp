@@ -1,0 +1,10 @@
+﻿@model AtlanticCovidTracker.Web.Features.States.HistoricForStateViewModel
+@{
+    ViewData["Title"] = $"{Model.StateMetadata.State} Historic";
+}
+
+<h1>@Utilities.GetStateName(Model.StateMetadata.State) Historic</h1>
+
+<partial name="_StateMetadata" for="StateMetadata" />
+<partial name="_StateDataCollection" for="HistoricData" />
+
