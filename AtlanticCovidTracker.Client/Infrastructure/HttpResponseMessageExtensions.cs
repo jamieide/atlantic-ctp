@@ -18,12 +18,16 @@ namespace AtlanticCovidTracker.Client.Infrastructure
             var request = response.RequestMessage;
             if (response.IsSuccessStatusCode)
             {
-                logger.LogTrace($"'{request.Method} {request.RequestUri}' returned success status code '{response.StatusCode}'.");
+                // TODO probably not necessary, the HttpClient logs
+                //2020 - 07 - 28 14:59:34.1514 | INFO | System.Net.Http.HttpClient.IAtlanticCovidTrackerClient.ClientHandler | Sending HTTP request GET https://covidtracking.com/api/v1/us/current.json
+                //2020 - 07 - 28 14:59:34.8817 | INFO | System.Net.Http.HttpClient.IAtlanticCovidTrackerClient.ClientHandler | Received HTTP response after 724.7737ms - OK
+                //2020 - 07 - 28 14:59:34.8817 | INFO | System.Net.Http.HttpClient.IAtlanticCovidTrackerClient.LogicalHandler | End processing HTTP request after 744.4386ms - OK
+                logger.LogInformation($"'{request.Method} {request.RequestUri}' returned success status code '{response.StatusCode}'.");
             }
             else
             {
                 var message = $"'{request.Method} {request.RequestUri}' returned failure status code '{response.StatusCode}' and reason phrase '{response.ReasonPhrase}'.";
-                logger.LogCritical(message);
+                logger.LogError(message);
                 throw new AtlanticCovidTrackerClientException(message);
             }
         }
@@ -42,7 +46,7 @@ namespace AtlanticCovidTracker.Client.Infrastructure
             catch (Exception ex)
             {
                 var message = $"JSON deserialization to type '{typeof(T).FullName}' failed.";
-                logger.LogCritical(message, ex);
+                logger.LogError(message, ex);
                 throw new AtlanticCovidTrackerClientException(message, ex);
             }
         }
