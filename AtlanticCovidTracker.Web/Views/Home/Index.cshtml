@@ -1,8 +1,13 @@
-﻿
+﻿@model ApiStatus
 @{
     ViewData["Title"] = "Index";
 }
 
-<div class="jumbotron">
-    This site is a simple demonstration of accessing and displaying COVID-19 data from <a href="https://covidtracking.com/"> The COVID Tracking Project</a>. 
+<div class="container">
+    <div class="jumbotron">
+        This site is a simple demonstration of accessing and displaying COVID-19 data from <a href="https://covidtracking.com/"> The COVID Tracking Project</a>.
+    </div>
+
+    <h2>API Status</h2>
+    <partial name="_ApiStatus" />
 </div>

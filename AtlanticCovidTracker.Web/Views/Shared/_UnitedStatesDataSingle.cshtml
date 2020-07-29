@@ -2,71 +2,67 @@
 
     <table class="table table-sm table-striped">
         <tr>
-            <th>Date</th>
+            <th><span asp-for="Date" data-toggle="tooltip"></span></th>
             <td class="text-right">@Model.Date.ToShortDateString()</td>
         </tr>
         <tr>
-            <th>Death</th>
+            <th><span asp-for="Death" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.Death)</td>
         </tr>
         <tr>
-            <th>Death Increase</th>
+            <th><span asp-for="DeathIncrease" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.DeathIncrease)</td>
         </tr>
         <tr>
-            <th>Hospitalized Cumulative</th>
+            <th><span asp-for="HospitalizedCumulative" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.HospitalizedCumulative)</td>
         </tr>
         <tr>
-            <th>Hospitalized Currently</th>
+            <th><span asp-for="HospitalizedCurrently" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.HospitalizedCurrently)</td>
         </tr>
         <tr>
-            <th>In ICU Cumulative</th>
+            <th><span asp-for="InIcuCumulative" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.InIcuCumulative)</td>
         </tr>
         <tr>
-            <th>In ICU Currently</th>
+            <th><span asp-for="InIcuCurrently" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.InIcuCurrently)</td>
         </tr>
         <tr>
-            <th>Negative</th>
+            <th><span asp-for="Negative" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.Negative)</td>
         </tr>
         <tr>
-            <th>Negative Increase</th>
+            <th><span asp-for="NegativeIncrease" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.NegativeIncrease)</td>
         </tr>
         <tr>
-            <th>On Ventilator Cumulative</th>
+            <th><span asp-for="OnVentilatorCumulative" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.OnVentilatorCumulative)</td>
         </tr>
         <tr>
-            <th>On Ventilator Currently</th>
+            <th><span asp-for="OnVentilatorCurrently" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.OnVentilatorCurrently)</td>
         </tr>
         <tr>
-            <th>Pending</th>
+            <th><span asp-for="Pending" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.Pending)</td>
         </tr>
         <tr>
-            <th>Positive</th>
+            <th><span asp-for="Positive" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.Positive)</td>
         </tr>
         <tr>
-            <th>Positive Increase</th>
+            <th><span asp-for="PositiveIncrease" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.PositiveIncrease)</td>
         </tr>
         <tr>
-            <th>Recovered</th>
+            <th><span asp-for="Recovered" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.Recovered)</td>
         </tr>
         <tr>
-            <th>Total Test Results</th>
+            <th><span asp-for="TotalTestResults" data-toggle="tooltip"></span></th>
             <td class="text-right">@Utilities.FormatNullableInt(Model.TotalTestResults)</td>
-        </tr>
-        <tr>
-            <th>Total Test Results Increase</th>
-            <td class="text-right">@Utilities.FormatNullableInt(Model.TotalTestResultsIncrease)</td>
         </tr>
     </table>

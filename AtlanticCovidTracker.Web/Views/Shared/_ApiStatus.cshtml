@@ -1,0 +1,29 @@
+﻿@model ApiStatus
+
+<table class="table table-sm table-striped">
+    <tbody>
+        <tr>
+            <td><span asp-for="BuildTime"></span></td>
+            <td class="text-right">@Model.BuildTime.ToShortDateString() @Model.BuildTime.ToShortTimeString()</td>
+            <td><span asp-description-for="BuildTime"></span></td>
+        </tr>
+        <tr>
+            <td><span asp-for="Production"></span></td>
+            <td class="text-right">
+                @if (Model.Production)
+                {
+                    @:True
+                } else
+                {
+                    @:False
+                }
+            </td>
+            <td><span asp-description-for="Production"></span></td>
+        </tr>
+        <tr>
+            <td><span asp-for="RunNumber"></span></td>
+            <td class="text-right">@Model.RunNumber</td>
+            <td><span asp-description-for="RunNumber"></span></td>
+        </tr>
+    </tbody>
+</table>

@@ -3,8 +3,11 @@
     ViewData["Title"] = $"{Model.StateMetadata.State} Historic";
 }
 
-<h1>@Utilities.GetStateName(Model.StateMetadata.State) Historic</h1>
-
-<partial name="_StateMetadata" for="StateMetadata" />
-<partial name="_StateDataCollection" for="HistoricData" />
+<div class="container mb-3">
+    <h1>@Utilities.GetStateName(Model.StateMetadata.State) Historic</h1>
+    <partial name="_StateMetadata" for="StateMetadata" />
+</div>
+<div class="container-fluid">
+    <partial name="_StateDataCollection" for="HistoricData" />
+</div>
 
