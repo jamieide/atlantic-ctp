@@ -12,17 +12,12 @@ namespace AtlanticCovidTracker.Web
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHttpClient<IAtlanticCovidTrackerClient, AtlanticCovidTrackerClient>(config =>
-            {
-                config.BaseAddress = new Uri("https://covidtracking.com/");
-            });
-
             services.Configure<RouteOptions>(config =>
             {
                 config.LowercaseUrls = true;
             });
 
-            // TODO understand caching
+            // TODO understand response caching
             //services.AddResponseCaching();
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation();
