@@ -1,31 +1,33 @@
 ﻿@model IEnumerable<StateData>
-
+@{
+    var firstRow = Model.First();
+}
 <table class="table table-sm table-striped">
     <thead>
         <tr>
-            <th>Date</th>
-            <th>Data Quality Grade</th>
-            <th>Death</th>
-            <th>Death Confirmed</th>
-            <th>Death Increase</th>
-            <th>Death Probably</th>
-            <th>Hospitalized Cumulative</th>
-            <th>Hospitalized Increase</th>
-            <th>In ICU Cumulative</th>
-            <th>In ICU Currently</th>
-            <th>Negative</th>
-            <th>Negative Increase</th>
-            <th>Negative Tests Viral</th>
-            <th>On Ventilator Cumulative</th>
-            <th>On Ventilator Currently</th>
-            <th>Pending</th>
-            <th>Positive Cases Viral</th>
-            <th>Positive Increase</th>
-            <th>Positive Tests Viral</th>
-            <th>Recovered</th>
-            <th>Total Test Results</th>
-            <th>Total Test Results Increase</th>
-            <th>Total Tests Viral</th>
+            <th><span asp-for="@firstRow.Date" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.DataQualityGrade" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Death" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Death Confirmed" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Death Increase" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Death Probably" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.HospitalizedCumulative" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.HospitalizedIncrease" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.InIcuCumulative" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.InIcuCurrently" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Negative" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.NegativeTestsViral" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.OnVentilatorCumulative" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.OnVentilatorCurrently" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Pending" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Positive" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.PositiveCasesViral" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.PositiveIncrease" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.PositiveTestsViral" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Recovered" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.TotalTestResults" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.TotalTestResults Increase" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.TotalTestsViral" data-toggle="tooltip"></span></th>
         </tr>
     </thead>
     <tbody>
@@ -43,13 +45,13 @@
                 <td class="text-right">@Utilities.FormatNullableInt(stateData.InIcuCumulative)</td>
                 <td class="text-right">@Utilities.FormatNullableInt(stateData.InIcuCurrently)</td>
                 <td class="text-right">@Utilities.FormatNullableInt(stateData.Negative)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(stateData.NegativeIncrease)</td>
                 <td class="text-right">@Utilities.FormatNullableInt(stateData.NegativeTestsViral)</td>
                 <td class="text-right">@Utilities.FormatNullableInt(stateData.OnVentilatorCumulative)</td>
                 <td class="text-right">@Utilities.FormatNullableInt(stateData.OnVentilatorCurrently)</td>
                 <td class="text-right">@Utilities.FormatNullableInt(stateData.Pending)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.Positive)</td>
                 <td class="text-right">@Utilities.FormatNullableInt(stateData.PositiveCasesViral)</td>
-                <td class="text-right">@Utilities.FormatNullableInt(stateData.PostiveIncrease)</td>
+                <td class="text-right">@Utilities.FormatNullableInt(stateData.PositiveIncrease)</td>
                 <td class="text-right">@Utilities.FormatNullableInt(stateData.PositiveTestsViral)</td>
                 <td class="text-right">@Utilities.FormatNullableInt(stateData.Recovered)</td>
                 <td class="text-right">@Utilities.FormatNullableInt(stateData.TotalTestResults)</td>

@@ -1,24 +1,27 @@
 ﻿@model IEnumerable<UnitedStatesData>
+@{
+    var firstRow = Model.First();
+}
 
 <table class="table table-sm table-striped">
     <thead>
         <tr>
-            <th>Date</th>
-            <th>Death</th>
-            <th>Death Increase</th>
-            <th>Hospitalized Cumulative</th>
-            <th>Hospitalized Currently</th>
-            <th>In ICU Cumulative</th>
-            <th>In ICU Currently</th>
-            <th>Negative</th>
-            <th>Negative Increase</th>
-            <th>On Ventilator Cumulative</th>
-            <th>On Ventilator Currently</th>
-            <th>Pending</th>
-            <th>Positive</th>
-            <th>Positive Increase</th>
-            <th>Recovered</th>
-            <th>Total Test Results</th>
+            <th><span asp-for="@firstRow.Date" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Death" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.DeathIncrease" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.HospitalizedCumulative" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.HospitalizedCurrently" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.InIcuCumulative" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.InIcuCurrently" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Negative" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.NegativeIncrease" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.OnVentilatorCumulative" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.OnVentilatorCurrently" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Pending" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Positive" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.PositiveIncrease" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.Recovered" data-toggle="tooltip"></span></th>
+            <th><span asp-for="@firstRow.TotalTestResults" data-toggle="tooltip"></span></th>
         </tr>
     </thead>
     <tbody>
