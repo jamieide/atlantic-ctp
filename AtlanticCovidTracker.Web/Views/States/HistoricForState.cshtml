@@ -3,11 +3,16 @@
     ViewData["Title"] = $"{Model.StateMetadata.State} Historic";
 }
 
-<div class="container mb-3">
-    <h1>@Utilities.GetStateName(Model.StateMetadata.State) Historic</h1>
+<h1>@Utilities.GetStateName(Model.StateMetadata.State) Historic</h1>
+
+<div class="mb-3">
+    <a class="btn btn-outline-primary" asp-controller="States" asp-action="Current">
+        <span class="mr-3">&laquo;</span>Back
+    </a>
+</div>
+
+<div class="mb-3">
     <partial name="_StateMetadata" for="StateMetadata" />
 </div>
-<div class="container-fluid">
-    <partial name="_StateDataCollection" for="HistoricData" />
-</div>
+<partial name="_StateDataCollection" for="HistoricData" />
 
